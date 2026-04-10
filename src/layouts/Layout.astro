@@ -1,4 +1,5 @@
 ---
+import Header from "../components/Header.astro";
 ---
 
 <!doctype html>
@@ -12,6 +13,15 @@
     <title>azaw.at</title>
   </head>
   <body>
-    <slot />
+    <Header />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
+
+<style>
+  main {
+    padding-top: 28px;
+  }
+</style>
