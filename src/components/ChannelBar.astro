@@ -1,0 +1,85 @@
+---
+type NavLink = { href: string; label: string };
+
+const links: NavLink[] = [
+  { href: "/", label: "home" },
+  { href: "/projects", label: "projects" },
+  { href: "/gear", label: "gear" },
+];
+
+const path = Astro.url.pathname;
+---
+
+<aside class="channel-bar">
+  <div class="server-name">azaw.at</div>
+  <nav class="channel-list">
+    {
+      links.map(({ href, label }) => (
+        <a href={href} class={`channel ${path === href ? "active" : ""}`}>
+          <span class="hash">#</span>
+          {label}
+        </a>
+      ))
+    }
+  </nav>
+</aside>
+
+<style>
+  .channel-bar {
+    width: 240px;
+    min-width: 240px;
+    height: 100vh;
+    background: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-right: 1px solid var(--border);
+  }
+
+  .server-name {
+    padding: 0 16px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    cursor: default;
+    flex-shrink: 0;
+  }
+
+  .channel-list {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+  }
+
+  .channel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    margin: 1px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: color-mix(in srgb, var(--text) 50%, transparent);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .channel:hover {
+    background: var(--highlight);
+    color: var(--text);
+  }
+
+  .channel.active {
+    background: var(--highlight);
+    color: var(--text);
+  }
+
+  .hash {
+    font-size: 18px;
+    line-height: 1;
+  }
+</style>

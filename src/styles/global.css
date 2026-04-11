@@ -1,13 +1,26 @@
 :root {
-  --win-gray: #c0c0c0;
-  --win-dark: #404040;
-  --win-shadow: #808080;
-  --win-white: #ffffff;
-  --win-black: #000000;
+  --bg-primary: #323339;
+  --bg-secondary: #2c2d32;
+  --border: #3e3f45;
+  --highlight: #414248;
+  --text: #f2f2f2;
 }
 
+* {
+  user-select: none;
+}
+
+main *,
+main {
+  user-select: text;
+}
+
+html,
 body {
-  background-image: url("/bg.gif");
-  background-repeat: repeat;
-  background-size: auto;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Arial", sans-serif;
+  background: var(--bg-primary);
+  color: var(--text);
 }

@@ -1,0 +1,59 @@
+---
+
+---
+
+<div class="server-bar">
+  <div class="server-icon active" title="azaw.at">
+    <img src="/favicon.ico" alt="azaw.at" />
+  </div>
+  <div class="separator"></div>
+</div>
+
+<style>
+  .server-bar {
+    width: 72px;
+    min-width: 72px;
+    height: 100vh;
+    background: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 0;
+    gap: 8px;
+    overflow: hidden;
+    border-right: 1px solid var(--border);
+  }
+
+  .server-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-radius 0.15s ease;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .server-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .server-icon:hover,
+  .server-icon.active {
+    border-radius: 30%;
+  }
+
+  .separator {
+    width: 32px;
+    height: 2px;
+    background: var(--border);
+    border-radius: 1px;
+    flex-shrink: 0;
+  }
+</style>
