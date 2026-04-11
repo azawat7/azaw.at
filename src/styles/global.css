@@ -1,9 +1,9 @@
 :root {
-  --bg-primary: #323339;
-  --bg-secondary: #2c2d32;
-  --border: #3e3f45;
-  --highlight: #414248;
-  --text: #f2f2f2;
+  --bg-primary: #1e1e2e;
+  --bg-secondary: #181825;
+  --border: #313244;
+  --highlight: #313244;
+  --text: #cdd6f4;
 }
 
 * {
@@ -16,7 +16,7 @@ p {
 }
 
 a {
-  color: #7eb8f7;
+  color: #89b4fa;
   text-decoration: none;
 }
 

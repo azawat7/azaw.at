@@ -67,8 +67,13 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
     font-weight: 500;
   }
 
-  .channel.active {
+  .channel:hover {
     background: var(--highlight);
+    color: var(--text);
+  }
+
+  .channel.active {
+    background: #45475a;
     color: var(--text);
   }
 
