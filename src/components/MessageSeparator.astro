@@ -1,0 +1,36 @@
+---
+interface Props {
+  label?: string;
+}
+
+const { label } = Astro.props;
+---
+
+<div class="separator">
+  <div class="line"></div>
+  {label && <span class="label">{label}</span>}
+  <div class="line"></div>
+</div>
+
+<style>
+  .separator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+  }
+
+  .line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .label {
+    font-size: 11px;
+    font-weight: 600;
+    color: color-mix(in srgb, var(--text) 40%, transparent);
+    white-space: nowrap;
+    user-select: none;
+  }
+</style>

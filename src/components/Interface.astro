@@ -1,6 +1,7 @@
 ---
 import ServerBar from "./ServerBar.astro";
 import ChannelBar from "./ChannelBar.astro";
+import ChannelWelcome from "./ChannelWelcome.astro";
 
 interface Props {
   title: string;
@@ -17,6 +18,8 @@ const { title } = Astro.props;
       <span class="hash">#</span>{title}
     </div>
     <main class="content">
+      <div class="spacer"></div>
+      <ChannelWelcome page={title} />
       <slot />
     </main>
     <div class="no-permission">
@@ -62,10 +65,21 @@ const { title } = Astro.props;
   .content {
     flex: 1;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: none;
+  }
+
+  .content::-webkit-scrollbar {
+    display: none;
+  }
+
+  .spacer {
+    flex: 1;
   }
 
   .no-permission {
-    margin: 0 8px 8px;
+    margin: 8px;
     padding: 12px 16px;
     border-radius: 8px;
     background: var(--bg-secondary);
@@ -78,3 +92,12 @@ const { title } = Astro.props;
     cursor: not-allowed;
   }
 </style>
+
+<script>
+  function scrollToBottom(): void {
+    const content = document.querySelector("main.content");
+    if (content) content.scrollTop = content.scrollHeight;
+  }
+
+  document.addEventListener("astro:page-load", scrollToBottom);
+</script>
