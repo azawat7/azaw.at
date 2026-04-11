@@ -6,7 +6,7 @@ const links: NavLink[] = [
   { href: "/projects", label: "projects" },
 ];
 
-const path = Astro.url.pathname;
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 ---
 
 <aside class="channel-bar" transition:name="channel-bar">
