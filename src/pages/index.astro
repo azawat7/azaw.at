@@ -2,26 +2,63 @@
 import Message from "../components/Message.astro";
 import MessageSeparator from "../components/MessageSeparator.astro";
 import Layout from "../layouts/Layout.astro";
+
+const links = [
+  {
+    name: "steam",
+    url: "https://steamcommunity.com/id/azawat/",
+    username: "azawat",
+  },
+  { name: "github", url: "https://github.com/azawat7/", username: "azawat7" },
+  {
+    name: "spotify",
+    url: "https://open.spotify.com/user/13rwwdcmbn3k7qkd6rhzjka65",
+    username: "azawat",
+  },
+  {
+    name: "valorant",
+    url: "https://tracker.gg/valorant/profile/riot/aza%23wat/overview",
+    username: "aza#wat",
+  },
+  {
+    name: "faceit",
+    url: "https://www.faceit.com/en/players/azawat7",
+    username: "azawat7",
+  },
+  {
+    name: "skycrypt",
+    url: "https://sky.shiiyu.moe/stats/azawat/Lemon",
+    username: "azawat",
+  },
+];
 ---
 
 <Layout title="home">
   <MessageSeparator label="11 April, 2026" />
-  <Message avatar="favicon.ico" , date="11/04/2026 03:45" , name="azawat">
-    <h1>T</h1>
-    <h2>T</h2>
-    <h3>T</h3>
+  <Message avatar="/favicon.ico" date="11/04/2026 03:45" name="azawat">
+    <h2>Hey! I'm azawat</h2>
+  </Message>
+  <Message avatar="/favicon.ico" date="11/04/2026 04:44" name="azawat">
+    <h2>Links:</h2>
     <ul>
-      <li>t</li>
-      <li>t</li>
-      <li>t</li>
-      <li>t</li>
+      {
+        links.map(({ name, url, username }) => (
+          <li>
+            <a href={url} target="_blank">
+              <span class="link-name">{name}</span>
+              {username}
+            </a>
+          </li>
+        ))
+      }
     </ul>
-    <ol>
-      <li>t</li>
-      <li>t</li>
-      <li>t</li>
-      <li>t</li>
-    </ol>
-    <p>t</p>
   </Message>
 </Layout>
+
+<style>
+  .link-name {
+    display: inline-block;
+    width: 10ch;
+    font-family: monospace;
+  }
+</style>
