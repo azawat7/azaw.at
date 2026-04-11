@@ -9,7 +9,7 @@ const links: NavLink[] = [
 const path = Astro.url.pathname;
 ---
 
-<aside class="channel-bar">
+<aside class="channel-bar" transition:name="channel-bar">
   <div class="server-name">azaw.at</div>
   <nav class="channel-list">
     {
@@ -65,11 +65,6 @@ const path = Astro.url.pathname;
     color: color-mix(in srgb, var(--text) 50%, transparent);
     font-size: 15px;
     font-weight: 500;
-  }
-
-  .channel:hover {
-    background: var(--highlight);
-    color: var(--text);
   }
 
   .channel.active {
