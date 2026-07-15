@@ -1,8 +1,4 @@
 ---
-import ServerBar from "./ServerBar.astro";
-import ChannelBar from "./ChannelBar.astro";
-import ChannelWelcome from "./ChannelWelcome.astro";
-
 interface Props {
   title: string;
 }
@@ -11,21 +7,7 @@ const { title } = Astro.props;
 ---
 
 <div class="app">
-  <ServerBar />
-  <ChannelBar />
-  <div class="main">
-    <div class="page-header">
-      <span class="hash">#</span>{title}
-    </div>
-    <main class="content">
-      <div class="spacer"></div>
-      <ChannelWelcome page={title} />
-      <slot />
-    </main>
-    <div class="no-permission">
-      You do not have permission to send messages in this channel.
-    </div>
-  </div>
+  <slot />
 </div>
 
 <style>
@@ -33,6 +15,7 @@ const { title } = Astro.props;
     display: flex;
     height: 100vh;
     overflow: hidden;
+    background-image: url("bg.gif");
   }
 
   .main {

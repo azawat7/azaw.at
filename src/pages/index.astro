@@ -1,6 +1,4 @@
 ---
-import Message from "../components/Message.astro";
-import MessageSeparator from "../components/MessageSeparator.astro";
 import Layout from "../layouts/Layout.astro";
 
 const links = [
@@ -11,11 +9,6 @@ const links = [
   },
   { name: "github", url: "https://github.com/azawat7/", username: "azawat7" },
   {
-    name: "spotify",
-    url: "https://open.spotify.com/user/13rwwdcmbn3k7qkd6rhzjka65",
-    username: "azawat",
-  },
-  {
     name: "valorant",
     url: "https://tracker.gg/valorant/profile/riot/aza%23wat/overview",
     username: "aza#wat",
@@ -25,21 +18,10 @@ const links = [
     url: "https://www.faceit.com/en/players/azawat7",
     username: "azawat7",
   },
-  {
-    name: "skycrypt",
-    url: "https://sky.shiiyu.moe/stats/azawat/Lemon",
-    username: "azawat",
-  },
 ];
 ---
 
 <Layout title="home">
-  <MessageSeparator label="11 April, 2026" />
-  <Message avatar="/favicon.ico" date="11/04/2026 03:45" name="azawat">
-    <h2>Hey! I'm azawat</h2>
-  </Message>
-  <Message avatar="/favicon.ico" date="11/04/2026 04:44" name="azawat">
-    <h2>Links:</h2>
     <ul>
       {
         links.map(({ name, url, username }) => (
@@ -52,7 +34,6 @@ const links = [
         ))
       }
     </ul>
-  </Message>
 </Layout>
 
 <style>
