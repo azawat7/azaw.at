@@ -3,32 +3,37 @@ import Layout from "../layouts/Layout.astro";
 
 const links = [
   {
-    name: "steam",
+    name: "Steam",
     url: "https://steamcommunity.com/id/azawat/",
-    username: "azawat",
   },
-  { name: "github", url: "https://github.com/azawat7/", username: "azawat7" },
+  { name: "GitHub", url: "https://github.com/azawat7/" },
   {
-    name: "valorant",
+    name: "Valorant Tracker",
     url: "https://tracker.gg/valorant/profile/riot/aza%23wat/overview",
-    username: "aza#wat",
   },
   {
-    name: "faceit",
-    url: "https://www.faceit.com/en/players/azawat7",
-    username: "azawat7",
+    name: "Letterboxd",
+    url: "https://letterboxd.com/awza/"
   },
+  {
+    name: "MyAnimeList",
+    url: "https://myanimelist.net/profile/azawat"
+  },
+  {
+    name: "MyDramaList",
+    url: "https://mydramalist.com/profile/azawat",
+  }
 ];
 ---
 
-<Layout title="home">
+<Layout title="azawat">
+    <h1>azawat's linktree</h1>
     <ul>
       {
-        links.map(({ name, url, username }) => (
+        links.map(({ name, url }) => (
           <li>
             <a href={url} target="_blank">
-              <span class="link-name">{name}</span>
-              {username}
+              <span>{name}</span>
             </a>
           </li>
         ))
@@ -37,9 +42,7 @@ const links = [
 </Layout>
 
 <style>
-  .link-name {
-    display: inline-block;
-    width: 10ch;
-    font-family: monospace;
+  h1 {
+    margin-top: 30px;
   }
 </style>
