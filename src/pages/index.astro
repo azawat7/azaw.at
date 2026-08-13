@@ -2,51 +2,70 @@
 import Layout from "../layouts/Layout.astro";
 
 const links = [
-  {
-    name: "Steam",
-    url: "https://steamcommunity.com/id/azawat/",
-  },
-  { name: "GitHub", url: "https://github.com/azawat7/" },
-  {
-    name: "Valorant Tracker",
-    url: "https://tracker.gg/valorant/profile/riot/aza%23wat/overview",
-  },
-  {
-    name: "evxl.app (Kovaak's)",
-    url: "https://evxl.app/u/azawat/Voltaic%20S5/Intermediate",
-  },
-  {
-    name: "Letterboxd",
-    url: "https://letterboxd.com/awza/"
-  },
-  {
-    name: "MyAnimeList",
-    url: "https://myanimelist.net/profile/azawat"
-  },
-  {
-    name: "MyDramaList",
-    url: "https://mydramalist.com/profile/azawat",
-  }
+   [{ name: "GitHub", url: "https://github.com/azawat7/" }],
+  [
+    {
+      name: "Steam",
+      url: "https://steamcommunity.com/id/azawat/",
+    },
+    {
+      name: "Steam²",
+      url: "https://steamcommunity.com/profiles/76561199109048146"
+    }
+  ],
+  [
+    {
+      name: "Valorant Tracker",
+      url: "https://tracker.gg/valorant/profile/riot/aza%23wat/overview",
+    },
+    {
+      name: "evxl.app (Kovaak's)",
+      url: "https://evxl.app/u/azawat/Voltaic%20S5/Intermediate",
+    },
+  ],
+  [
+    {
+      name: "Letterboxd",
+      url: "https://letterboxd.com/awza/",
+    },
+    {
+      name: "MyAnimeList",
+      url: "https://myanimelist.net/profile/azawat",
+    },
+    {
+      name: "MyDramaList",
+      url: "https://mydramalist.com/profile/azawat",
+    },
+  ],
 ];
 ---
 
 <Layout title="azawat">
-    <h1>azawat's linktree</h1>
-    <ul>
-      {
-        links.map(({ name, url }) => (
-          <li>
-            <a href={url} target="_blank">
-              <span>{name}</span>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+  <h1>azawat's linktree</h1>
+  <ul>
+    {
+      links.flatMap((category, i) =>
+        category
+          .map(({ name, url }) => (
+            <li>
+              <a href={url} target="_blank">
+                <span>{name}</span>
+              </a>
+            </li>
+          ))
+          .concat(i < links.length - 1 ? [<br />] : []),
+      )
+    }
+  </ul>
 </Layout>
 
 <style>
   h1 {
     margin-top: 30px;
+  }
+
+  .divider {
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
   }
 </style>
